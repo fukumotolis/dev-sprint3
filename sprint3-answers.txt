@@ -1,0 +1,8 @@
+
+What does file.readline do?
+
+Reads the content of the current line of a file. When you call it again, it will have moved on to the next line.
+
+What does String.strip do?
+
+Removes leading and trailing characters (whitespace?) from a string.
