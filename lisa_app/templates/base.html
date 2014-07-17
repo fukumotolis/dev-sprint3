@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+        <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+
+        <style>
+        .table-curved {
+            border-collapse: separate;
+        }
+        .table-curved {
+            border: solid #ccc 0px;
+            border-radius: 6px;
+            border-left:0px;
+        }
+        .table-curved td, .table-curved th {
+            border-left: 0px solid #ccc;
+            border-top: -px solid #ccc;
+        }
+        .table-curved th {
+            border-top: none;
+        }
+        .table-curved th:first-child {
+            border-radius: 6px 0 0 0;
+        }
+        .table-curved th:last-child {
+            border-radius: 0 6px 0 0;
+        }
+        .table-curved th:only-child{
+            border-radius: 6px 6px 0 0;
+        }
+        .table-curved tr:last-child td:first-child {
+            border-radius: 0 0 0 6px;
+        }
+        .table-curved tr:last-child td:last-child {
+            border-radius: 0 0 6px 0;
+        }
+
+        </style>
+    </head>
+
+    <body>
+
+    <div id="header" align="center">
+
+     <h1>hello world</h1>
+
+    </div>
+
+        <div id="content" align="center">
+            <table class="table-curved" bgcolor="66CCCC" width=75%>
+                <tr>
+                    <td>
+                        <img src="http://media1.giphy.com/media/YVWKP1QOcfxVC/200_s.gif">
+                    </td>
+                    <td>
+                        <br>
+                        <br>
+                        <br>
+                          {% block body %} {% endblock %}
+                    </td>
+                </tr>
+                <tr>
+                 <td colspan="2">
+                        {% if 'username' in session %}
+                            i hear you like <a href="{{url_for('cats')}}">cats</a> and <a href="{{url_for('dogs')}}">dogs</a> and <a href="{{url_for('books')}}">books</a>?
+                        {% else %}
+                            please <a href="{{url_for('login')}}">log in</a>!
+                        {% endif %}
+                       
+                 </td>
+                </tr>
+            </table>
+    
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
